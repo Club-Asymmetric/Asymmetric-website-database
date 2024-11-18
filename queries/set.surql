@@ -31,6 +31,7 @@ DEFINE FIELD department ON registration TYPE string;
 DEFINE FIELD college ON registration TYPE string;
 DEFINE FIELD email ON registration TYPE string ASSERT $value.is_email();
 DEFINE FIELD number ON registration TYPE number;
+DEFINE FIELD hash ON registration TYPE string;
 DEFINE FIELD event ON registration TYPE record<event>;
 DEFINE INDEX emails ON registration FIELDS email UNIQUE;
 DEFINE INDEX numbers ON registration FIELDS number UNIQUE;
