@@ -55,5 +55,5 @@ DEFINE TABLE member TYPE NORMAL SCHEMAFULL;
 DEFINE FIELD role ON member TYPE string;
 DEFINE FIELD name ON member TYPE string;
 DEFINE FIELD photos ON member TYPE array<record<photo>>;
-DEFINE FIELD `info` ON member TYPE string;
+DEFINE FIELD description ON member TYPE string;
 DEFINE FIELD portfolio ON member TYPE string;
