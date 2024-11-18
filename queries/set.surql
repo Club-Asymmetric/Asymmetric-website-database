@@ -25,12 +25,12 @@ DEFINE TABLE registration TYPE NORMAL SCHEMAFULL;
 DEFINE FIELD name ON registration TYPE string;
 DEFINE FIELD team ON registration TYPE option<string>;
 DEFINE FIELD members ON registration TYPE array<string>
-    ASSERT $value.len() >= $this.event.team_size[0] AND $value.len() <= $this.event.team_size[1];
+    ASSERT $value.len() >= $this.event.min_team_size AND $value.len() <= $this.event.max_team_size;
 DEFINE FIELD year ON registration TYPE int ASSERT $value>0;
 DEFINE FIELD department ON registration TYPE string;
 DEFINE FIELD college ON registration TYPE string;
 DEFINE FIELD email ON registration TYPE string ASSERT $value.is_email();
-DEFINE FIELD number ON registration TYPE number;
+DEFINE FIELD number ON registration TYPE string;
 DEFINE FIELD hash ON registration TYPE string;
 DEFINE FIELD event ON registration TYPE record<event>;
 DEFINE INDEX emails ON registration FIELDS email UNIQUE;
