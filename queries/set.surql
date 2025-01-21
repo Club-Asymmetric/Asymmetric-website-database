@@ -20,6 +20,8 @@ DEFINE FIELD min_team_size ON event TYPE int ASSERT $value > 0;
 DEFINE FIELD max_team_size ON event TYPE int ASSERT $value > 0;
 DEFINE FIELD photos ON event TYPE array<record<photo>>;
 DEFINE FIELD description ON event TYPE string;
+DEFINE FIELD synopsis ON event TYPE string;
+DEFINE FIELD redirect ON event TYPE option<string>;
 
 DEFINE TABLE registration TYPE NORMAL SCHEMAFULL;
 DEFINE FIELD name ON registration TYPE string;
@@ -53,8 +55,13 @@ DEFINE FIELD mime ON podcast TYPE string ASSERT $value INSIDE [
 ];
 
 DEFINE TABLE member TYPE NORMAL SCHEMAFULL;
-DEFINE FIELD role ON member TYPE string;
 DEFINE FIELD name ON member TYPE string;
+DEFINE FIELD role ON member TYPE string;
 DEFINE FIELD photos ON member TYPE array<record<photo>>;
 DEFINE FIELD description ON member TYPE string;
 DEFINE FIELD portfolio ON member TYPE string;
+DEFINE FIELD energy ON member TYPE string;
+DEFINE FIELD dimension ON member TYPE string;
+DEFINE FIELD type ON member TYPE string;
+DEFINE FIELD hobbies ON member TYPE string;
+DEFINE FIELD features ON member TYPE string;
